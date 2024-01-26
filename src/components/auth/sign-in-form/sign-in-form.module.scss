@@ -1,0 +1,70 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 420px;
+  height: 528px;
+  padding: 30px;
+
+  color: var(--color-light-100);
+
+  background-color: var(--color-dark-700);
+
+  & label {
+    font-size: 14px;
+    color: var(--color-dark-100);
+  }
+
+  & input {
+    background-color: inherit;
+    border: 1px solid var(--color-dark-300);
+  }
+}
+
+.formRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  & button {
+    width: 100%;
+  }
+
+  & input {
+    height: 34px;
+  }
+}
+
+.form_right_side {
+  display: flex;
+  flex-flow: row-reverse;
+
+  margin-right: 12px;
+  margin-bottom: 66px;
+
+  color: var(--color-light-100);
+}
+
+.rememberMe {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+
+  color: var(--color-light-900);
+
+  & p {
+    margin: 20px 0 12px;
+  }
+}
