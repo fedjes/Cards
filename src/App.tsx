@@ -1,5 +1,3 @@
-import { DropDown } from '@/components/ui/drop-down'
-
 export function App() {
   return (
     <div
@@ -10,8 +8,6 @@ export function App() {
         height: '100vh',
         justifyContent: 'center',
       }}
-    >
-      <DropDown />
-    </div>
+    ></div>
   )
 }
