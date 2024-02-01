@@ -39,6 +39,12 @@
       background-color: inherit;
     }
   }
+
+ & input[type='search']{
+    position: relative;
+    padding-left: 52px;
+
+  }
 }
 
 
@@ -68,5 +74,9 @@
     top: 28px;
     right: 12px;
   }
+
+
 }
+
+
 

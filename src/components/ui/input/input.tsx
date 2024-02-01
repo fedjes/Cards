@@ -1,6 +1,6 @@
 import { ChangeEvent, ComponentPropsWithoutRef, forwardRef, useState } from 'react'
 
-import { Eye, EyeOff } from '@/assets'
+import { Eye, EyeOff, Search } from '@/assets'
 import cn from 'classnames'
 import clsx from 'clsx'
 
@@ -18,10 +18,12 @@ export const Input = forwardRef<HTMLInputElement, inputProps>((props, ref) => {
   const classNames = {
     error: clsx(error ? s.error : ''),
     root: cn(error ? s.rootError : s.root, className),
+    search: cn(type['search'] ? s.search : s.root),
   }
 
   const [showPassword, setShowPassword] = useState(false)
   const isShowPasswordButton = type === 'password'
+  const isSearch = type === 'search'
   const setShowPasswordHandler = () => setShowPassword(prevValue => !prevValue)
   const getCurrentInputType = (type: inputProps['type'], showPassword: boolean) => {
     if (type === 'password' && showPassword) {
@@ -41,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, inputProps>((props, ref) => {
     <div className={s.position}>
       <label className={s.label}>{placeholder}</label>
       <input
-        className={classNames.root}
+        className={cn(classNames.root, classNames.search)}
         disabled={disabled}
         onChange={onChangeHandler}
         placeholder={placeholder}
@@ -56,7 +58,7 @@ export const Input = forwardRef<HTMLInputElement, inputProps>((props, ref) => {
         ) : (
           <EyeOff onClick={setShowPasswordHandler} size={1.5} />
         ))}
-
+      {isSearch ? <Search className={classNames.search} size={1.5} /> : ''}
       <p className={classNames.error}>{error}</p>
     </div>
   )
